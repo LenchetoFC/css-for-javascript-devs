@@ -26,10 +26,23 @@ body {
 }
 
 /* Add styles here! */
+/* Solution: https://github.com/css-for-js/huckleberry/commit/ec891a3603e04f29556a0faff0a1a1168780011f */
 .max-width-wrapper {
   margin-inline: auto;
-  padding-inline: 16px;
-  max-width: 640px;
+  padding-inline: 24px;
+  max-width: 800px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+p {
+  font-size: 1.25rem;
+  line-height: 150%;
+  margin-block: 16px;
+}
+p:last-child {
+  margin-block-end: 0;
 }
 
 .intro-chunk,
@@ -39,10 +52,6 @@ main {
   h1 {
     margin-block: 32px;
   }
-
-  p {
-    margin-block: 16px;
-  }
 }
 
 .intro-chunk {
@@ -51,15 +60,14 @@ main {
   }
 
   p {
-    margin-block: 16px 0;
-    max-width: 320px;
+    max-width: 400px;
   }
 }
 
 .card {
-  padding: 8px 32px;
+  padding: 24px;
   background-color: var(--grey-1-white);
-  margin-inline: -16px;
+  margin-inline: -24px;
 }
 
 .card,
@@ -67,13 +75,11 @@ header {
   border-bottom: 8px solid var(--grey-2-light);
 }
 
-.card p {
-  margin-inline-start: -16px;
-}
-
 .indented-heading {
-  margin-inline-start: -40px;
-  padding: 16px 24px;
+  font-size: 1.5rem;
+  margin-block-start: -16px;
+  margin-inline-start: -32px;
+  padding: 16px 32px;
   width: fit-content;
   background-color: var(--secondary-gold-light);
   border-bottom: 8px solid var(--secondary-gold-dark);
