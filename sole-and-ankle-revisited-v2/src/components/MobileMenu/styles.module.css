@@ -25,7 +25,7 @@
 
 .Title {
   margin: 0;
-  font-weight: 500;
+  font-weight: var(--font-weight-normal);
   color: var(--mauve-12);
   font-size: 17px;
 }
@@ -46,7 +46,7 @@
   padding: 0 15px;
   font-size: 15px;
   line-height: 1;
-  font-weight: 500;
+  font-weight: var(--font-weight-normal);
   height: 35px;
   user-select: none;
   &:focus:not(:focus-visible) {

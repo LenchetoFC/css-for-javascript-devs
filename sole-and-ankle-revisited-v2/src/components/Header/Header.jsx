@@ -69,12 +69,13 @@ const MainHeader = styled.div`
   display: flex;
   align-items: baseline;
   padding: 18px 32px;
-  height: 72px;
-  border-bottom: 1px solid ${COLORS.gray[300]};
+  /* height: 72px; */
+  border-bottom: 1px solid var(--color-gray-300);
+  overflow: auto;
 
   @media ${QUERIES.tabletMaxWidth} {
     & {
-      border-top: 4px solid ${COLORS.gray[900]};
+      border-top: 4px solid var(--color-gray-900);
       align-items: center;
       justify-content: space-between;
     }
@@ -91,17 +92,17 @@ const NavLink = styled.a`
   font-size: 1.125rem;
   text-transform: uppercase;
   text-decoration: none;
-  color: ${COLORS.gray[900]};
-  font-weight: ${WEIGHTS.medium};
+  color: var(--color-gray-900);
+  font-weight: var(--font-weight-medium);
 
   &:first-of-type {
-    color: ${COLORS.secondary};
+    color: var(--color-secondary);
   }
 `;
 
 const DesktopNav = styled.nav`
   display: flex;
-  gap: 48px;
+  gap: clamp(1rem, 8.1vw - 4rem, 3rem);
   margin: 0px 48px;
 
   @media ${QUERIES.tabletMaxWidth} {

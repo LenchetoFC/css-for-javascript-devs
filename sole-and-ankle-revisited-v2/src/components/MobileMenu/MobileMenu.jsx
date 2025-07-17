@@ -14,6 +14,7 @@ import styles from "./styles.module.css";
 import UnstyledButton from "../UnstyledButton";
 import Icon from "../Icon";
 import VisuallyHidden from "../VisuallyHidden";
+import { COLORS } from "../../constants";
 
 const MobileMenu = ({ isOpen, onDismiss }) => {
   if (!isOpen) {
@@ -35,22 +36,22 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
             <DialogDescription>Navigate between shop pages</DialogDescription>
           </VisuallyHidden>
 
-          <button onClick={onDismiss} aria-label="Close">
+          <UnstyledButton onClick={onDismiss} aria-label="Close">
             <Icon id="close" strokeWidth={2} />
-          </button>
-          <nav>
+          </UnstyledButton>
+          <Nav>
             <a href="/sale">Sale</a>
             <a href="/new">New&nbsp;Releases</a>
             <a href="/men">Men</a>
             <a href="/women">Women</a>
             <a href="/kids">Kids</a>
             <a href="/collections">Collections</a>
-          </nav>
-          <footer>
+          </Nav>
+          <Footer>
             <a href="/terms">Terms and Conditions</a>
             <a href="/privacy">Privacy Policy</a>
             <a href="/contact">Contact Us</a>
-          </footer>
+          </Footer>
         </Content>
       </DialogPortal>
     </Wrapper>
@@ -60,7 +61,7 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
 const Wrapper = styled(Dialog)``;
 
 const Content = styled(DialogContent)`
-  background: grey;
+  background: var(--color-white);
   border-radius: 6px;
   position: fixed;
   right: 0;
@@ -73,6 +74,46 @@ const Content = styled(DialogContent)`
   top: 0;
   padding: 25px;
   animation: _contentShow_1t96g_1 150ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  > button {
+    align-self: flex-end;
+  }
+`;
+
+const Nav = styled.nav`
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  a {
+    font-size: calc(18 / 16 * 1rem);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    color: var(--color-gray-900);
+    text-decoration: none;
+
+    &:first-of-type {
+      color: var(--color-secondary);
+    }
+  }
+`;
+
+const Footer = styled.footer`
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  a {
+    font-size: calc(14 / 16 * 1rem);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-gray-700);
+    text-decoration: none;
+  }
 `;
 
 export default MobileMenu;

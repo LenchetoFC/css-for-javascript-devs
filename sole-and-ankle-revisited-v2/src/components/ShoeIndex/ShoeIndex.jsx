@@ -64,7 +64,7 @@ const TitleContainer = styled.div`
 
 const Title = styled.h2`
   font-size: 1.5rem;
-  font-weight: ${WEIGHTS.medium};
+  font-weight: var(--font-weight-medium);
 `;
 
 const LeftColumn = styled.div`
